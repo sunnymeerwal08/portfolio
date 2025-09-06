@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: #0a0a0f;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+.logo {
+  font-size: 24px;
+  color: #00eaff;
+  font-weight: 700;
+}
+.logo span {
+  color: #ff007c;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+nav a {
+  color: #ccc;
+  font-weight: 500;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #00eaff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  position: absolute;
+  z-index: 2;
+}
+.hero h2 {
+  font-size: 48px;
+  color: #fff;
+}
+.hero-content span {
+  color: #00eaff;
+}
+.tagline {
+  margin: 15px 0;
+  font-size: 18px;
+  color: #aaa;
+}
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: #00eaff;
+  color: #000;
+  transition: 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #0099cc;
+}
+.resume {
+  background: #ff007c;
+  color: #fff;
+}
+.resume:hover {
+  background: #cc0066;
+}
+.view {
+  background: #00ff99;
+  color: #000;
+}
+.view:hover {
+  background: #00cc77;
+}
+
+section {
+  padding: 100px 10% 60px;
+  position: relative;
+}
+.section-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00eaff;
+}
+#about p {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.skill-card {
+  background: linear-gradient(145deg, #111, #222);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+}
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 20px #00eaff55;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.project-card {
+  background: linear-gradient(145deg, #111, #222);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card h3 {
+  color: #ff007c;
+  margin-bottom: 10px;
+}
+.project-card p {
+  color: #ccc;
+  line-height: 1.5;
+}
+.project-card .links {
+  margin-top: 10px;
+}
+.project-card .links a {
+  color: #00eaff;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #ff007c55;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form input,
+form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+}
+form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00eaff;
+  font-weight: bold;
+  cursor: pointer;
+}
+form button:hover {
+  background: #0099cc;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #aaa;
+}
+
+/* Three.js container */
+#three-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  width: 75%; /* 75% width */
+  height: 80%; /* 80% height */
+  max-width: 1000px;
+  max-height: 800px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close {
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #ff007c;
+}
+
+.modal iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunny | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">Sunny<span>.</span></h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="resume/Sunny_Resume.pdf" download="Sunny_Resume.pdf"
+              >Resume</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div id="three-container"></div>
+      <div class="hero-content">
+        <h2>Hi, I'm <span>Sunny</span></h2>
+        <p class="tagline">Cybersecurity Enthusiast • Developer • DSA Lover</p>
+        <div class="hero-btns">
+          <a
+            href="resume/Sunny_Resume.pdf"
+            class="btn resume"
+            download="Sunny_Resume.pdf"
+            >Download Resume</a
+          >
+          <button id="viewResume" class="btn view">View Resume</button>
+          <a href="#projects" class="btn">View Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Modal -->
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe
+          src="resume/Sunny_Resume.pdf"
+          frameborder="0"
+          width="75%"
+          height="80%"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        Hi! I'm Sunny, a B.Tech Cyber Security student from Bhilwara, Rajasthan.
+        Skilled in Cybersecurity, Web Development, DSA, Operating Systems, and
+        SQL. Completed internships at Deloitte, JP Morgan, Walmart, Tata, and
+        C-DAC. Currently pursuing 7th semester with CGPA 7.32.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">C / C++</div>
+        <div class="skill-card">Java</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Web Development (HTML, CSS, JS, React)</div>
+        <div class="skill-card">SQL / Database</div>
+        <div class="skill-card">Cybersecurity</div>
+        <div class="skill-card">Operating Systems</div>
+        <div class="skill-card">DSA</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Secure Image Cryptographic System</h3>
+          <p>
+            Image encryption/decryption using Python for secure transmission.
+          </p>
+          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
+        </div>
+
+        <div class="project-card">
+          <h3>Phishing Website Detector</h3>
+          <p>Real-time detection of phishing URLs using pattern recognition.</p>
+          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
+        </div>
+
+        <div class="project-card">
+          <h3>Portfolio Site</h3>
+          <p>Responsive UI using HTML, CSS, JS.</p>
+          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
+        </div>
+
+        <div class="project-card">
+          <h3>AI Resume Analyzer</h3>
+          <p>Helps to find jobs according to your skills.</p>
+          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
+        </div>
+
+        <div class="project-card">
+          <h3>Health Management System</h3>
+          <p>
+            System to manage patient records, appointments, and medical data.
+            (Ongoing)
+          </p>
+          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 Sunny | Made with ❤️</p>
+    </footer>
+
+    <script src="three.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // Resume Modal JS
+      const modal = document.getElementById("resumeModal");
+      const btn = document.getElementById("viewResume");
+      const span = document.getElementsByClassName("close")[0];
+
+      btn.onclick = function () {
+        modal.style.display = "flex";
+      };
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>
