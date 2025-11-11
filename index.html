@@ -3,162 +3,385 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sunny | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Sunny Meerwal | Cybersecurity Portfolio</title>
+    <style>
+      /* ---------- GLOBAL ---------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #020510, #040d19, #0a192f);
+        color: #ebf0f6;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ---------- HEADER ---------- */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 60px;
+        background: rgba(10, 25, 47, 0.85);
+        backdrop-filter: blur(12px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+        border-bottom: 1px solid rgba(100, 255, 218, 0.25);
+      }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .logo span {
+        color: #80d0bd;
+        text-shadow: 0 0 10px #64ffda;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+      nav ul li a {
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      nav ul li a:hover,
+      nav ul li a.active {
+        color: #64ffda;
+        text-shadow: 0 0 10px #64ffda;
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      #three-container {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .hero-content h2 {
+        font-size: 2.7rem;
+        margin-bottom: 12px;
+        color: #fff;
+      }
+      .hero-content h2 span {
+        color: #64ffda;
+      }
+      .tagline {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        color: #a8b2d1;
+        opacity: 0.95;
+      }
+      .btn {
+        padding: 12px 28px;
+        border: 1px solid #64ffda;
+        color: #64ffda;
+        border-radius: 30px;
+        margin: 8px;
+        background: transparent;
+        cursor: pointer;
+        transition: 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      .btn:hover {
+        background: #64ffda;
+        color: #0a192f;
+        box-shadow: 0 0 20px #64ffda;
+      }
+
+      /* ---------- SECTIONS ---------- */
+      section {
+        padding: 90px 10%;
+      }
+      .section-title {
+        font-size: 2.2rem;
+        color: #64ffda;
+        text-align: center;
+        margin-bottom: 45px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px #64ffda33;
+      }
+
+      /* ---------- ABOUT ---------- */
+      #about p {
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        color: #ccd6f6;
+        background: rgba(100, 255, 218, 0.05);
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(100, 255, 218, 0.1);
+        box-shadow: 0 0 20px rgba(100, 255, 218, 0.08);
+      }
+
+      /* ---------- SKILLS ---------- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px;
+      }
+      .skill-card {
+        background: rgba(17, 34, 64, 0.6);
+        border: 1px solid rgba(100, 255, 218, 0.2);
+        padding: 18px;
+        text-align: center;
+        border-radius: 12px;
+        transition: 0.3s;
+        color: #e6f1ff;
+        font-weight: 500;
+      }
+      .skill-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px rgba(100, 255, 218, 0.4);
+        border-color: rgba(100, 255, 218, 0.5);
+      }
+
+      /* ---------- PROJECTS ---------- */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+      }
+      .project-card {
+        background: rgba(17, 34, 64, 0.55);
+        border: 1px solid rgba(100, 255, 218, 0.15);
+        border-radius: 14px;
+        padding: 25px;
+        transition: 0.4s;
+        color: #ccd6f6;
+      }
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px rgba(100, 255, 218, 0.3);
+      }
+      .project-card h3 {
+        color: #64ffda;
+        margin-bottom: 12px;
+      }
+      .project-card p {
+        font-size: 0.98rem;
+        margin-bottom: 15px;
+        color: #a8b2d1;
+      }
+      .links a {
+        color: #64ffda;
+        margin: 0 5px;
+        font-size: 0.9rem;
+        transition: 0.3s;
+      }
+      .links a:hover {
+        color: #fff;
+        text-shadow: 0 0 8px #64ffda;
+      }
+
+      /* ---------- CONTACT ---------- */
+      #contact {
+        background: rgba(100, 255, 218, 0.03);
+        border-top: 1px solid rgba(100, 255, 218, 0.2);
+        border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+      }
+      form {
+        max-width: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      input,
+      textarea {
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.07);
+        color: #fff;
+        font-size: 1rem;
+        transition: 0.3s;
+      }
+      input:focus,
+      textarea:focus {
+        border: 1px solid #64ffda;
+        box-shadow: 0 0 10px #64ffda33;
+      }
+      button[type="submit"] {
+        background: #64ffda;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        color: #0a192f;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button[type="submit"]:hover {
+        background: #52e0c4;
+        box-shadow: 0 0 20px #64ffda;
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: rgba(2, 8, 20, 0.9);
+        color: #a8b2d1;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(100, 255, 218, 0.2);
+      }
+    </style>
   </head>
+
   <body>
     <header>
       <h1 class="logo">Sunny<span>.</span></h1>
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="#home" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li>
-            <a href="resume/Sunny_Resume.pdf" download="Sunny_Resume.pdf"
-              >Resume</a
-            >
-          </li>
+          <li><a href="#" id="resumeBtn">Resume</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <div id="three-container"></div>
       <div class="hero-content">
-        <h2>Hi, I'm <span>Sunny</span></h2>
-        <p class="tagline">Cybersecurity Enthusiast • Developer • DSA Lover</p>
-        <div class="hero-btns">
-          <a
-            href="resume/Sunny_Resume.pdf"
-            class="btn resume"
-            download="Sunny_Resume.pdf"
-            >Download Resume</a
-          >
-          <button id="viewResume" class="btn view">View Resume</button>
-          <a href="#projects" class="btn">View Projects</a>
-        </div>
+        <h2>Hi, I'm <span>Sunny Meerwal</span></h2>
+        <p class="tagline"><span class="typing"></span></p>
+        <button class="btn" id="viewResumeBtn">View Resume</button>
+        <a href="#projects" class="btn">View Projects</a>
       </div>
-    </section>
-
-    <!-- Resume Modal -->
-    <!-- Resume Modal -->
-    <div id="resumeModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <iframe
-          src="resume/Sunny_Resume.pdf"
-          frameborder="0"
-          width="75%"
-          height="80%"
-        ></iframe>
-      </div>
-    </div>
-
-    <!-- About -->
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        Hi! I'm Sunny, a B.Tech Cyber Security student from Bhilwara, Rajasthan.
-        Skilled in Cybersecurity, Web Development, DSA, Operating Systems, and
-        SQL. Completed internships at Deloitte, JP Morgan, Walmart, Tata, and
-        C-DAC. Currently pursuing 7th semester with CGPA 7.32.
-      </p>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">C / C++</div>
-        <div class="skill-card">Java</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">Web Development (HTML, CSS, JS, React)</div>
-        <div class="skill-card">SQL / Database</div>
-        <div class="skill-card">Cybersecurity</div>
-        <div class="skill-card">Operating Systems</div>
-        <div class="skill-card">DSA</div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Secure Image Cryptographic System</h3>
-          <p>
-            Image encryption/decryption using Python for secure transmission.
-          </p>
-          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
-        </div>
-
-        <div class="project-card">
-          <h3>Phishing Website Detector</h3>
-          <p>Real-time detection of phishing URLs using pattern recognition.</p>
-          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
-        </div>
-
-        <div class="project-card">
-          <h3>Portfolio Site</h3>
-          <p>Responsive UI using HTML, CSS, JS.</p>
-          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
-        </div>
-
-        <div class="project-card">
-          <h3>AI Resume Analyzer</h3>
-          <p>Helps to find jobs according to your skills.</p>
-          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
-        </div>
-
-        <div class="project-card">
-          <h3>Health Management System</h3>
-          <p>
-            System to manage patient records, appointments, and medical data.
-            (Ongoing)
-          </p>
-          <div class="links"><a href="#">GitHub</a> | <a href="#">Live</a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2 class="section-title">Contact Me</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
     </section>
 
     <footer>
-      <p>© 2025 Sunny | Made with ❤️</p>
+      <p>© 2025 Sunny Meerwal | Built with ❤ using HTML, CSS & JS</p>
     </footer>
 
-    <script src="three.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-      // Resume Modal JS
-      const modal = document.getElementById("resumeModal");
-      const btn = document.getElementById("viewResume");
-      const span = document.getElementsByClassName("close")[0];
-
-      btn.onclick = function () {
-        modal.style.display = "flex";
-      };
-      span.onclick = function () {
-        modal.style.display = "none";
-      };
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
+      // Typing animation
+      const roles = [
+        "Cybersecurity Enthusiast",
+        "Web Developer",
+        "Ethical Hacker",
+        "UI/UX Designer",
+      ];
+      let i = 0,
+        j = 0,
+        deleting = false;
+      const typingEl = document.querySelector(".typing");
+      function type() {
+        const current = roles[i];
+        typingEl.textContent = current.substring(0, j);
+        if (!deleting && j++ === current.length) {
+          deleting = true;
+          setTimeout(type, 1500);
+        } else if (deleting && j-- === 0) {
+          deleting = false;
+          i = (i + 1) % roles.length;
+          setTimeout(type, 200);
+        } else {
+          setTimeout(type, deleting ? 50 : 100);
         }
-      };
+      }
+      type();
+
+      // 3D background
+      const container = document.getElementById("three-container");
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true,
+      });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      container.appendChild(renderer.domElement);
+
+      const light = new THREE.PointLight(0xffffff, 1);
+      light.position.set(10, 10, 10);
+      scene.add(light);
+
+      const shapes = [];
+      for (let k = 0; k < 50; k++) {
+        const geom =
+          Math.random() > 0.5
+            ? new THREE.BoxGeometry(1, 1, 1)
+            : new THREE.SphereGeometry(0.5, 16, 16);
+        const mat = new THREE.MeshStandardMaterial({
+          color: Math.random() > 0.5 ? 0x00eaff : 0xff007c,
+          transparent: true,
+          opacity: 0.8,
+        });
+        const mesh = new THREE.Mesh(geom, mat);
+        mesh.position.set(
+          (Math.random() - 0.5) * 20,
+          (Math.random() - 0.5) * 20,
+          (Math.random() - 0.5) * 20
+        );
+        scene.add(mesh);
+        shapes.push({ mesh, speed: 0.002 + Math.random() * 0.003 });
+      }
+      camera.position.z = 10;
+      function animate() {
+        requestAnimationFrame(animate);
+        shapes.forEach((o) => {
+          o.mesh.rotation.x += o.speed;
+          o.mesh.rotation.y += o.speed;
+        });
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Resume button - open outside in new tab
+      const resumeURL = "new.18.pdf"; // 🔹 Your actual resume file path
+
+      document.getElementById("resumeBtn").addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open(resumeURL, "_blank");
+      });
+
+      document
+        .getElementById("viewResumeBtn")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          window.open(resumeURL, "_blank");
+        });
     </script>
   </body>
 </html>
