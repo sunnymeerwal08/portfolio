@@ -247,6 +247,22 @@
         box-shadow: 0 0 20px #64ffda;
       }
 
+      /* ---------- CONTACT LINKS ---------- */
+      .contact-info {
+        text-align: center;
+        margin-top: 30px;
+      }
+      .contact-info a {
+        margin: 0 10px;
+        color: #64ffda;
+        font-size: 1.1rem;
+        transition: 0.3s;
+      }
+      .contact-info a:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #64ffda;
+      }
+
       /* ---------- FOOTER ---------- */
       footer {
         text-align: center;
@@ -256,10 +272,23 @@
         font-size: 0.9rem;
         border-top: 1px solid rgba(100, 255, 218, 0.2);
       }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 10px;
+          padding: 15px 20px;
+        }
+        .hero-content h2 {
+          font-size: 2rem;
+        }
+      }
     </style>
   </head>
 
   <body>
+    <!-- HEADER -->
     <header>
       <h1 class="logo">Sunny<span>.</span></h1>
       <nav>
@@ -269,18 +298,148 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <!-- header resume button -->
           <li><a href="#" id="resumeBtn">Resume</a></li>
         </ul>
       </nav>
     </header>
 
+    <!-- HERO -->
     <section id="home" class="hero">
       <div id="three-container"></div>
       <div class="hero-content">
         <h2>Hi, I'm <span>Sunny Meerwal</span></h2>
-        <p class="tagline"><span class="typing"></span></p>
+        <p class="tagline">
+          <span class="typing"></span>
+        </p>
+        <!-- hero resume button -->
         <button class="btn" id="viewResumeBtn">View Resume</button>
         <a href="#projects" class="btn">View Projects</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        Motivated <b>B.Tech Cyber Security</b> student from
+        <b>Govt. Engineering College, Ajmer</b> with CGPA 7.55. Experienced in
+        cybersecurity tools and secure web development. Completed internships
+        with Deloitte, Tata, Walmart, Cisco, and CDAC. Passionate about network
+        security, ethical hacking, and building secure digital systems.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">C / C++</div>
+        <div class="skill-card">Java</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">HTML / CSS / JS</div>
+        <div class="skill-card">React.js</div>
+        <div class="skill-card">SQL / MySQL</div>
+        <div class="skill-card">Wireshark / Nmap / Burp Suite</div>
+        <div class="skill-card">Metasploit / Kali Linux</div>
+        <div class="skill-card">DSA / OOPS</div>
+        <div class="skill-card">Git / GitHub / VS Code</div>
+        <div class="skill-card">UI/UX Design</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Secure Image Cryptographic System</h3>
+          <p>
+            Image encryption/decryption for secure transmission using
+            cryptographic algorithms.
+          </p>
+          <div class="links">
+            <a
+              href="https://github.com/sunnymeerwal08/secure-file-system"
+              target="_blank"
+              >GitHub</a
+            >
+            |
+            <a
+              href="https://sunnymeerwal08.github.io/secure-file-system/"
+              target="_blank"
+              >Live</a
+            >
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Phishing Website Detector</h3>
+          <p>Real-time phishing URL detection using pattern recognition.</p>
+          <div class="links">
+            <a
+              href="https://github.com/sunnymeerwal08/phishing-detector-web"
+              target="_blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>Responsive portfolio built with HTML, CSS, and JavaScript.</p>
+          <div class="links">
+            <a
+              href="https://github.com/sunnymeerwal08/portfolio"
+              target="_blank"
+              >GitHub</a
+            >
+            |
+            <a
+              href="https://sunnymeerwal08.github.io/portfolio/"
+              target="_blank"
+              >Live</a
+            >
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>AI Resume Analyzer</h3>
+          <p>Analyzes resume and suggests jobs based on candidate skills.</p>
+          <div class="links">
+            <a
+              href="https://github.com/sunnymeerwal08/AI-Resume-Analyzer"
+              target="_blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <form action="https://formspree.io/f/xnqevvba" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <a href="mailto:bairwasunny048@gmail.com"
+          >📧 bairwasunny048@gmail.com</a
+        >
+        <a href="https://github.com/sunnymeerwal08" target="_blank"
+          >💻 GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/sunny-meerwal-23850826b/"
+          target="_blank"
+          >🔗 LinkedIn</a
+        >
       </div>
     </section>
 
@@ -288,36 +447,43 @@
       <p>© 2025 Sunny Meerwal | Built with ❤ using HTML, CSS & JS</p>
     </footer>
 
+    <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-      // Typing animation
+      /* ---------------- Typing animation (uses .typing) ---------------- */
       const roles = [
         "Cybersecurity Enthusiast",
         "Web Developer",
         "Ethical Hacker",
+        "DSA",
         "UI/UX Designer",
       ];
-      let i = 0,
-        j = 0,
-        deleting = false;
+      let rIndex = 0,
+        cIndex = 0;
       const typingEl = document.querySelector(".typing");
+
       function type() {
-        const current = roles[i];
-        typingEl.textContent = current.substring(0, j);
-        if (!deleting && j++ === current.length) {
-          deleting = true;
-          setTimeout(type, 1500);
-        } else if (deleting && j-- === 0) {
-          deleting = false;
-          i = (i + 1) % roles.length;
-          setTimeout(type, 200);
+        if (cIndex < roles[rIndex].length) {
+          typingEl.textContent += roles[rIndex][cIndex];
+          cIndex++;
+          setTimeout(type, 100);
         } else {
-          setTimeout(type, deleting ? 50 : 100);
+          setTimeout(erase, 1500);
+        }
+      }
+      function erase() {
+        if (cIndex > 0) {
+          typingEl.textContent = roles[rIndex].substring(0, cIndex - 1);
+          cIndex--;
+          setTimeout(erase, 50);
+        } else {
+          rIndex = (rIndex + 1) % roles.length;
+          setTimeout(type, 200);
         }
       }
       type();
 
-      // 3D background
+      /* ---------------- 3D background (Three.js) ---------------- */
       const container = document.getElementById("three-container");
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(
@@ -339,49 +505,57 @@
 
       const shapes = [];
       for (let k = 0; k < 50; k++) {
-        const geom =
+        const geometry =
           Math.random() > 0.5
             ? new THREE.BoxGeometry(1, 1, 1)
             : new THREE.SphereGeometry(0.5, 16, 16);
-        const mat = new THREE.MeshStandardMaterial({
+        const material = new THREE.MeshStandardMaterial({
           color: Math.random() > 0.5 ? 0x00eaff : 0xff007c,
           transparent: true,
           opacity: 0.8,
+          metalness: 0.6,
+          roughness: 0.2,
         });
-        const mesh = new THREE.Mesh(geom, mat);
+        const mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(
           (Math.random() - 0.5) * 20,
           (Math.random() - 0.5) * 20,
           (Math.random() - 0.5) * 20
         );
         scene.add(mesh);
-        shapes.push({ mesh, speed: 0.002 + Math.random() * 0.003 });
+        shapes.push({ mesh, speed: 0.001 + Math.random() * 0.003 });
       }
+
       camera.position.z = 10;
       function animate() {
         requestAnimationFrame(animate);
-        shapes.forEach((o) => {
-          o.mesh.rotation.x += o.speed;
-          o.mesh.rotation.y += o.speed;
+        shapes.forEach((obj) => {
+          obj.mesh.rotation.x += obj.speed;
+          obj.mesh.rotation.y += obj.speed;
         });
         renderer.render(scene, camera);
       }
       animate();
 
-      // Resume button - open outside in new tab
-      const resumeURL = "new.18.pdf"; // 🔹 Your actual resume file path
+      /* ---------------- Resume open in new tab ---------------- */
+      // 🔧 Replace this with your actual PDF URL (GitHub raw link, Google Drive direct link, S3, etc.)
+      const resumeURL = "new.18.pdf";
 
-      document.getElementById("resumeBtn").addEventListener("click", (e) => {
-        e.preventDefault();
-        window.open(resumeURL, "_blank");
+      const headerResumeBtn = document.getElementById("resumeBtn");
+      const heroResumeBtn = document.getElementById("viewResumeBtn");
+
+      // open in new tab when clicked
+      [headerResumeBtn, heroResumeBtn].forEach((el) => {
+        if (!el) return;
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          // try to open in new tab
+          window.open(resumeURL, "_blank", "noopener,noreferrer");
+        });
       });
 
-      document
-        .getElementById("viewResumeBtn")
-        .addEventListener("click", (e) => {
-          e.preventDefault();
-          window.open(resumeURL, "_blank");
-        });
+      // optional: make header link actual href (for accessibility / right-click)
+      if (headerResumeBtn) headerResumeBtn.setAttribute("href", resumeURL);
     </script>
   </body>
 </html>
